@@ -20,7 +20,7 @@ Feature: Start Sharp
     Examples:
       |name_unit   |parent_unit     |
       |UnidadJohnV |Administration  |
-      |UnidadJohnV |CAMINO TRISTE  |
+#      |UnidadJohnV |CAMINO TRISTE  |
 
   @Scenario2
   Scenario Outline: Cretate a new Meeting
@@ -32,4 +32,4 @@ Feature: Start Sharp
     Examples:
       |name_meeting |type_meeting |number_meeting |start_date |end_date   |location |unit        |organized_by |reporter     |attendee_list |start_hour |end_hour |
       |MeetingJohnV |Strategy     |00056763335422 |05/16/2022 |05/16/2022 |On Site  |UnidadJohnV |Adam Edwards |Allison Bell |Alexis Lopez  |14:00      |15:00    |
-      |MeetingJohnV |Strategy     |00056763335422 |05/16/2022 |05/16/2022 |On Site  |UnidadJohnV |CAMINO TRISTE |Allison Bell |Alexis Lopez  |14:00      |15:00    |
+#      |MeetingJohnV |Strategy     |00056763335422 |05/16/2022 |05/16/2022 |On Site  |UnidadJohnV |CAMINO TRISTE |Allison Bell |Alexis Lopez  |14:00      |15:00    |
