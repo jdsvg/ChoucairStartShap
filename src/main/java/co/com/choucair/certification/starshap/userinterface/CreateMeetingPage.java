@@ -1,24 +1,17 @@
 package co.com.choucair.certification.starshap.userinterface;
 
-
-// Serenity
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
-// Openqa
 import org.openqa.selenium.By;
 
 
-public class StartSharpPopUpMeeting extends PageObject {
+public class CreateMeetingPage extends PageObject {
 
     public static final Target INTPUT_NAME_NEW_MEETING = Target.the("Field where we can write the name of the new Meeting")
             .located(By.xpath("//input[@name='MeetingName']"));
 
     public static final Target INTPUT_NUMBER_NEW_MEETING = Target.the("Field where we can write the number of the new Meeting")
             .located(By.xpath("//input[@id='Serenity_Pro_Meeting_MeetingDialog10_MeetingNumber']"));
-
-
-
-
 
 
     public static final Target SPAN_MEETING_TYPE = Target.the("Tree that can show us the types for the new Meeting")
@@ -40,17 +33,6 @@ public class StartSharpPopUpMeeting extends PageObject {
             .located(By.xpath("//span[@id='select2-chosen-12']"));
 
 
-//div[@class='field AttendeeList']//span
-
-
-
-
-
-
-
-
-
-
     public static final Target INPUT_START_DATE = Target.the("Field where we can write the start date of the new Meeting")
             .located(By.xpath("//input[@id='Serenity_Pro_Meeting_MeetingDialog10_StartDate']"));
 
@@ -58,23 +40,10 @@ public class StartSharpPopUpMeeting extends PageObject {
             .located(By.xpath("//input[@id='Serenity_Pro_Meeting_MeetingDialog10_EndDate']"));
 
 
-
-
-
-
     public static final Target SELECT_START_HOUR = Target.the("List that can show us the options of start hours for the new Meeting")
             .located(By.xpath("//div[@class='field StartDate col-sm-6']//select"));
     public static final Target SELECT_END_HOUR = Target.the("List that can show us the options of end hours for the new Meeting")
             .located(By.xpath("//div[@class='field EndDate col-sm-6']//select"));
-
-
-
-
-
-
-
-
-
 
 
     public static final Target INPUT_SEARCHING = Target.the("Tree that can show us the types for the new Meeting")
@@ -84,15 +53,7 @@ public class StartSharpPopUpMeeting extends PageObject {
             .located(By.xpath("//div[@id='select2-drop']//ul//li[1]"));
 
 
-
-
-
     public static final Target SAVE_NEW_MEETING = Target.the("Button that save the new Meeting")
             .located(By.xpath("//div[@class='s-DialogToolbar s-Serenity-Toolbar s-Toolbar clearfix']//span"));
-
-
-
-
-
 
 }

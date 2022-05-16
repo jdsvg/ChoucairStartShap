@@ -1,7 +1,7 @@
 package co.com.choucair.certification.starshap.tasks;
 
 // Userinterface: StartSharpHomePage
-import co.com.choucair.certification.starshap.userinterface.StartSharpHomePage;
+import co.com.choucair.certification.starshap.userinterface.OpenUpPage;
 // Serenity
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -13,7 +13,7 @@ import net.serenitybdd.screenplay.actions.Open;
 public class OpenUp implements Task{
 
 
-    private StartSharpHomePage startsharphomepage;
+    private OpenUpPage startsharphomepage;
     public static Performable thePage(){
         return Tasks.instrumented(OpenUp.class);
     }

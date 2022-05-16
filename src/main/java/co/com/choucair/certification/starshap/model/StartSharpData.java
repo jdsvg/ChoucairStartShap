@@ -3,15 +3,8 @@ package co.com.choucair.certification.starshap.model;
 public class StartSharpData {
     private String  username;
     private String  password;
-
     private String name_unit;
     private String parent_unit;
-
-
-
-
-
-
     private String name_meeting;
     private String type_meeting;
     private String number_meeting;
@@ -26,17 +19,6 @@ public class StartSharpData {
     private String end_hour;
 
 
-
-
-
-
-
-
-
-
-
-
-    // Login Information
     public String getUsername() {
         return username;
     }
@@ -52,16 +34,6 @@ public class StartSharpData {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
-
-
-
-
-
-
-
-    // Busnisses Information
     public String getName_unit() {
         return name_unit;
     }
@@ -78,16 +50,6 @@ public class StartSharpData {
         this.parent_unit = parent_unit;
     }
 
-
-
-
-
-
-
-
-
-
-    //Meeting
     public String getName_meeting() {
         return name_meeting;
     }
