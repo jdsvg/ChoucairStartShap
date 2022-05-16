@@ -8,6 +8,8 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
+import java.util.concurrent.TimeUnit;
+
 public class TheSection implements Task {
 
 
@@ -26,11 +28,16 @@ public class TheSection implements Task {
             actor.attemptsTo(
                     Click.on(StartSharpSections.TREE_BUSNISSES_UNIT)
                 ,Click.on(StartSharpSections.BUTTON_TO_BUSNISSES_UNIT_SECTION)
-                ,Click.on(StartSharpSections.BUTTON_NEW_BUSSNISSES_UNIT)
+                ,Click.on(StartSharpSections.BUTTON_NEW_ITEM)
 
             );
-        }else if(ToSection.equalsIgnoreCase("Meetings")){
+        }else if(ToSection.equalsIgnoreCase("Meeting")){
+            actor.attemptsTo(
+                    Click.on(StartSharpSections.TREE_MEETINGS)
+                    ,Click.on(StartSharpSections.BUTTON_TO_MEETINGS_SECTION)
+                    ,Click.on(StartSharpSections.BUTTON_NEW_ITEM)
 
+            );
         }
 
     }

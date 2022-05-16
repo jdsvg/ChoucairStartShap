@@ -5,10 +5,7 @@ import co.com.choucair.certification.starshap.model.StartSharpData;
 // Question
 import co.com.choucair.certification.starshap.questions.Answer;
 // Tasks
-import co.com.choucair.certification.starshap.tasks.BusnissesUnit;
-import co.com.choucair.certification.starshap.tasks.Login;
-import co.com.choucair.certification.starshap.tasks.OpenUp;
-import co.com.choucair.certification.starshap.tasks.TheSection;
+import co.com.choucair.certification.starshap.tasks.*;
 // Cucumber
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -72,6 +69,32 @@ public class StartSharpBusinessUnitStepDefinitions {
     }
 
 
+    //SCENARIO 2
+    @Given("^now he go to the section (.*)")
+    public void nowHeGoToTheSectionMeeting(String section) throws Exception {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                TheSection.about(section)
+        );
+
+    }
+
+
+    @When("^he will to create a new Meeting$")
+    public void heWillToCreateANewMeeting(List<StartSharpData> data) throws Exception {
+
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                Meeting.CreateMeeting(data)
+        );
+
+
+
+    }
+
+    @Then("^he can see the new (.*) on the tree$")
+    public void heCanSeeTheNewMeetingJohnVOnTheTree(String data) throws Exception {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(data)));
+
+    }
 
 
 }
