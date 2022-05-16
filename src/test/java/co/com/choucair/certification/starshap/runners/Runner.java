@@ -4,6 +4,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 // Serenity
 import net.serenitybdd.cucumber.CucumberWithSerenity;
+// Junit
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)

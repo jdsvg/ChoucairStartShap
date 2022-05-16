@@ -63,15 +63,10 @@ public class StartSharpPopUpMeeting extends PageObject {
 
 
     public static final Target SELECT_START_HOUR = Target.the("List that can show us the options of start hours for the new Meeting")
-            .located(By.xpath("//select[@Class='editor s-DateTimeEditor time valid']"));
-    public static final Target OPTION_START_HOUR = Target.the("Start hour option for the new Meeting")
-            .located(By.xpath("//select[@Class='editor s-DateTimeEditor time valid']//option[20]"));
-
-
+            .located(By.xpath("//div[@class='field StartDate col-sm-6']//select"));
     public static final Target SELECT_END_HOUR = Target.the("List that can show us the options of end hours for the new Meeting")
-            .located(By.xpath("//select[@Class='editor s-DateTimeEditor time']"));
-    public static final Target OPTION_END_HOUR = Target.the("End hour option for the new Meeting")
-            .located(By.xpath("//select[@Class='editor s-DateTimeEditor time']//option[27]"));
+            .located(By.xpath("//div[@class='field EndDate col-sm-6']//select"));
+
 
 
 

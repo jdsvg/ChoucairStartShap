@@ -20,15 +20,16 @@ Feature: Start Sharp
     Examples:
       |name_unit   |parent_unit     |
       |UnidadJohnV |Administration  |
-#      |UnidadJohnV |NOEXITE         |
+      |UnidadJohnV |CAMINO TRISTE  |
 
   @Scenario2
   Scenario Outline: Cretate a new Meeting
     And now he go to the section Meeting
     When he will to create a new Meeting
-      |name_meeting    |type_meeting   |number_meeting   |start_date    |end_date    |location   |unit   |organized_by   |reporter   |attendee_list   |
-      |<name_meeting>  |<type_meeting> |<number_meeting> |<start_date>  |<end_date>  |<location> |<unit> |<organized_by> |<reporter> |<attendee_list> |
+      |name_meeting    |type_meeting   |number_meeting   |start_date    |end_date    |location   |unit   |organized_by   |reporter   |attendee_list   |start_hour  |end_hour   |
+      |<name_meeting>  |<type_meeting> |<number_meeting> |<start_date>  |<end_date>  |<location> |<unit> |<organized_by> |<reporter> |<attendee_list> |<start_hour>|<end_hour> |
     Then he can see the new <name_meeting> on the tree
     Examples:
-      |name_meeting |type_meeting |number_meeting |start_date |end_date   |location |unit        |organized_by |reporter     |attendee_list |
-      |MeetingJohnV |Strategy     |00056763335422 |05/16/2022 |05/16/2022 |On Site  |UnidadJohnV |Adam Edwards |Allison Bell |Alexis Lopez |
+      |name_meeting |type_meeting |number_meeting |start_date |end_date   |location |unit        |organized_by |reporter     |attendee_list |start_hour |end_hour |
+      |MeetingJohnV |Strategy     |00056763335422 |05/16/2022 |05/16/2022 |On Site  |UnidadJohnV |Adam Edwards |Allison Bell |Alexis Lopez  |14:00      |15:00    |
+      |MeetingJohnV |Strategy     |00056763335422 |05/16/2022 |05/16/2022 |On Site  |UnidadJohnV |CAMINO TRISTE |Allison Bell |Alexis Lopez  |14:00      |15:00    |

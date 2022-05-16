@@ -3,14 +3,15 @@ package co.com.choucair.certification.starshap.tasks;
 
 // Model
 import co.com.choucair.certification.starshap.model.StartSharpData;
-// Serenity
-import co.com.choucair.certification.starshap.userinterface.StartSharpPopUpBusnissesUnit;
+// Userinterface
 import co.com.choucair.certification.starshap.userinterface.StartSharpPopUpMeeting;
+// Serenity
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 // Util
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -67,10 +68,9 @@ public class Meeting implements Task {
                 ,Enter.theValue(dataToForm.get(0).getEnd_date()).into(StartSharpPopUpMeeting.INPUT_END_DATE)
 
 
-//                ,Click.on(StartSharpPopUpMeeting.SELECT_START_HOUR)
-//                ,Click.on(StartSharpPopUpMeeting.OPTION_START_HOUR)
-//                ,Click.on(StartSharpPopUpMeeting.SELECT_END_HOUR)
-//                ,Click.on(StartSharpPopUpMeeting.OPTION_END_HOUR)
+                ,SelectFromOptions.byVisibleText(dataToForm.get(0).getStart_hour()).from(StartSharpPopUpMeeting.SELECT_START_HOUR)
+                ,SelectFromOptions.byVisibleText(dataToForm.get(0).getEnd_hour()).from(StartSharpPopUpMeeting.SELECT_END_HOUR)
+//
 
 
                 ,Click.on(StartSharpPopUpMeeting.SAVE_NEW_MEETING)

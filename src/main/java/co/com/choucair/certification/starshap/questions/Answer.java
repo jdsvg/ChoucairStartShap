@@ -1,15 +1,13 @@
 package co.com.choucair.certification.starshap.questions;
 
 // Userinterface
-import co.com.choucair.certification.starshap.userinterface.SearchBusnissesUnit;
+import co.com.choucair.certification.starshap.userinterface.SearchItem;
 // Serenity
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.questions.Text;
 // Util
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Answer implements Question<Boolean>{
@@ -30,7 +28,7 @@ public class Answer implements Question<Boolean>{
         boolean result = true;
 
         actor.attemptsTo(
-                Enter.theValue(question).into(SearchBusnissesUnit.INPUT_SEARCH_BUSNISSES_UNIT)
+                Enter.theValue(question).into(SearchItem.INPUT_SEARCH)
         );
 
         try {
@@ -39,7 +37,7 @@ public class Answer implements Question<Boolean>{
             e.printStackTrace();
         }
 
-        String nameCourse = Text.of(SearchBusnissesUnit.SEARCH_NAME_BUSNISSES_UNIT).viewedBy(actor).asString();
+        String nameCourse = Text.of(SearchItem.SEARCH_ITEM).viewedBy(actor).asString();
         if (question.equalsIgnoreCase(nameCourse)){
             result = true;
         }else{

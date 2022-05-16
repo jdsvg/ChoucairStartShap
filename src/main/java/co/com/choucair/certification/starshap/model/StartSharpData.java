@@ -22,7 +22,8 @@ public class StartSharpData {
     private String organized_by;
     private String reporter;
     private String attendee_list;
-
+    private String start_hour;
+    private String end_hour;
 
 
 
@@ -167,6 +168,19 @@ public class StartSharpData {
         this.attendee_list = attendee_list;
     }
 
+    public String getStart_hour() {
+        return start_hour;
+    }
 
+    public void setStart_hour(String start_hour) {
+        this.start_hour = start_hour;
+    }
 
+    public String getEnd_hour() {
+        return end_hour;
+    }
+
+    public void setEnd_hour(String end_hour) {
+        this.end_hour = end_hour;
+    }
 }
