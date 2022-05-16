@@ -11,10 +11,10 @@ Feature: Start Sharp
 
   Scenario Outline: Create a Business Units
     And he go to the section Business Units
-    When he go to the section Business Units on the Star Sharp platform he will create a new Unit  filling all fields
+    When he is on the Star Sharp platform he will create a new Unit  filling all fields
     |name_unit    |parent_unit   |
     |<name_unit>  |<parent_unit> |
-    Then he see the new Business Unit on the tree
+    Then he see the new <name_unit> on the tree
 
     Examples:
       |name_unit   |parent_unit     |

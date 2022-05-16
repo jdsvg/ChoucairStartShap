@@ -1,8 +1,15 @@
 package co.com.choucair.certification.starshap.stepdefinitions;
 
-// Cucumber
+// Model
+import co.com.choucair.certification.starshap.model.StartSharpData;
+// Question
+import co.com.choucair.certification.starshap.questions.Answer;
+// Tasks
+import co.com.choucair.certification.starshap.tasks.BusnissesUnit;
 import co.com.choucair.certification.starshap.tasks.Login;
 import co.com.choucair.certification.starshap.tasks.OpenUp;
+import co.com.choucair.certification.starshap.tasks.TheSection;
+// Cucumber
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -27,40 +34,40 @@ public class StartSharpBusinessUnitStepDefinitions {
     public void thanJamesWantsToCreateAnBusinessUnitsAndThenCreateABussni() throws Exception {
         OnStage.theActorCalled("James").wasAbleTo(
                 OpenUp.thePage()
+
         );
 
     }
     @Given("^he go to login with his credentials$")
-//    public void heGoToLoginWithHisCredentials(DataTable arg1) throws Exception {
-    public void heGoToLoginWithHisCredentials() throws Exception {
-        OnStage.theActorCalled("James").wasAbleTo(
-                Login.OnThePage()
+    public void heGoToLoginWithHisCredentials(List<StartSharpData> data) throws Exception {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                Login.OnThePage(data)
+        );
+    }
+
+
+
+    // SCENARIO 1
+    @Given("^he go to the section (.*)$")
+    public void heGoToTheSectionBusinessUnits(String section) throws Exception {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+            TheSection.about(section)
         );
 
     }
 
-
-
-
-    @Given("^he go to the section Business Units$")
-    public void heGoToTheSectionBusinessUnits() throws Exception {
-        // Write code here that turns the phrase above into concrete actions
-
-    }
-
-    @When("^he go to the section Business Units on the Star Sharp platform he will create a new Unit  filling all fields$")
+    @When("^he is on the Star Sharp platform he will create a new Unit  filling all fields$")
 //    public void heGoToTheSectionBusinessUnitsOnTheStarSharpPlatformHeWillCreateANewUnitFillingAllFields(DataTable arg1) throws Exception {
-    public void heGoToTheSectionBusinessUnitsOnTheStarSharpPlatformHeWillCreateANewUnitFillingAllFields() throws Exception {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
-        // E,K,V must be a scalar (String, Integer, Date, enum etc)
+    public void heIsOnTheStarSharpPlatformHeWillCreateANewUnitFillingAllFields(List<StartSharpData> data) throws Exception {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                BusnissesUnit.CreateUnit(data)
+        );
 
     }
 
-    @Then("^he see the new Business Unit on the tree$")
-    public void heSeeTheNewBusinessUnitOnTheTree() throws Exception {
-        // Write code here that turns the phrase above into concrete actions
+    @Then("^he see the new (.*) on the tree$")
+    public void heSeeTheNewBusinessUnitOnTheTree(String data) throws Exception {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(data)));
 
     }
 
