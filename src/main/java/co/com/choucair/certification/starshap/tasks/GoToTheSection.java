@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.conditions.Check;
 
 public class GoToTheSection implements Task {
     private String ToSection;
@@ -20,21 +21,21 @@ public class GoToTheSection implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        if(ToSection.equalsIgnoreCase("Business Units")){
-            actor.attemptsTo(
-                    Click.on(GoToTheSectionPage.TREE_BUSNISSES_UNIT)
-                ,Click.on(GoToTheSectionPage.BUTTON_TO_BUSNISSES_UNIT_SECTION)
-                ,Click.on(GoToTheSectionPage.BUTTON_NEW_ITEM)
 
-            );
-        }else if(ToSection.equalsIgnoreCase("Meeting")){
-            actor.attemptsTo(
-                    Click.on(GoToTheSectionPage.TREE_MEETINGS)
-                    ,Click.on(GoToTheSectionPage.BUTTON_TO_MEETINGS_SECTION)
-                    ,Click.on(GoToTheSectionPage.BUTTON_NEW_ITEM)
-
-            );
-        }
+        actor.attemptsTo(
+                (Check.whether(ToSection.toString().trim().equals("Business Units")).
+                        andIfSo(
+                                Click.on(GoToTheSectionPage.TREE_BUSNISSES_UNIT)
+                                ,Click.on(GoToTheSectionPage.BUTTON_TO_BUSNISSES_UNIT_SECTION)
+                                ,Click.on(GoToTheSectionPage.BUTTON_NEW_ITEM)
+                        ).
+                        otherwise(
+                                Click.on(GoToTheSectionPage.TREE_MEETINGS)
+                                ,Click.on(GoToTheSectionPage.BUTTON_TO_MEETINGS_SECTION)
+                                ,Click.on(GoToTheSectionPage.BUTTON_NEW_ITEM)
+                        )
+                )
+        );
 
     }
 }
