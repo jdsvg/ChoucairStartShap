@@ -1,8 +1,6 @@
 package co.com.choucair.certification.starshap.tasks;
 
-// Userinterface
 import co.com.choucair.certification.starshap.userinterface.GoToTheSectionPage;
-// Serenity
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

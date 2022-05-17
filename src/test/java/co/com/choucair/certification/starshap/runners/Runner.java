@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features = "src/test/resources/features/start_sharp.feature",
-//        tags = "@Stories",
+        tags = "@Scenario2",
         glue = "co.com.choucair.certification.starshap.stepdefinitions",
         snippets = SnippetType.CAMELCASE )
 public class Runner {
