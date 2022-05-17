@@ -14,7 +14,7 @@ public class TheAnswer implements Question<Boolean>{
         this.question = question;
     }
 
-    public static TheAnswer onThePageAboutOf(String question) {
+    public static TheAnswer AfterSearching(String question) {
         return new TheAnswer(question);
     }
 

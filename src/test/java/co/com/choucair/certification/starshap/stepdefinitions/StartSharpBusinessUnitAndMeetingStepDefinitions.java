@@ -12,7 +12,7 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import java.util.List;
 
-public class StartSharpBusinessUnitStepDefinitions {
+public class StartSharpBusinessUnitAndMeetingStepDefinitions {
 
 
     @Before
@@ -45,7 +45,7 @@ public class StartSharpBusinessUnitStepDefinitions {
 
     @Then("^he see the new (.*) on the tree$")
     public void heSeeTheNewBusinessUnitOnTheTree(String data) throws Exception {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.onThePageAboutOf(data)));
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.AfterSearching(data)));
     }
 
 
@@ -63,7 +63,7 @@ public class StartSharpBusinessUnitStepDefinitions {
 
     @Then("^he can see the new (.*) on the tree$")
     public void heCanSeeTheNewMeetingJohnVOnTheTree(String data) throws Exception {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.onThePageAboutOf(data)));
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.AfterSearching(data)));
     }
 
 
