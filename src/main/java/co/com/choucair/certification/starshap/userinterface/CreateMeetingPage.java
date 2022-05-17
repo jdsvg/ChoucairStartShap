@@ -31,18 +31,16 @@ public class CreateMeetingPage extends PageObject {
             .located(By.id("Serenity_Pro_Meeting_MeetingDialog10_EndDate"));
 
     public static final Target SELECT_START_HOUR = Target.the("List that can show us the options of start hours for the new Meeting")
-            .located(By.xpath("//div[@class='field StartDate col-sm-6']//select"));
+            .located(By.cssSelector("div.StartDate > select"));
     public static final Target SELECT_END_HOUR = Target.the("List that can show us the options of end hours for the new Meeting")
-            .located(By.xpath("//div[@class='field EndDate col-sm-6']//select"));
+            .located(By.cssSelector("div.EndDate > select"));
 
 
-    public static final Target INPUT_SEARCHING = Target.the("Tree that can show us the types for the new Meeting")
-            .located(By.xpath("//div[@id='select2-drop']//input"));
+    public static final Target INPUT_SEARCHING = Target.the("Tree that can show us the input for searching a item")
+            .located(By.cssSelector("div#select2-drop input"));
 
-
-    public static final Target UNIQUE_SELECT_ON_TREE = Target.the("Tree that can show us the types for the new Meeting")
-            .located(By.xpath("//div[@id='select2-drop']//ul//li[1]"));
-
+    public static final Target UNIQUE_SELECT_ON_TREE = Target.the("Tree that can show us the list of items")
+            .located(By.cssSelector("div#select2-drop li"));
 
     public static final Target SAVE_NEW_MEETING = Target.the("Button that save the new Meeting")
             .located(By.className("fa-check-circle"));
