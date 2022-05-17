@@ -1,8 +1,6 @@
 package co.com.choucair.certification.starshap.tasks;
 
-// Userinterface: StartSharpHomePage
 import co.com.choucair.certification.starshap.userinterface.OpenUpPage;
-// Serenity
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;

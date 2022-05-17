@@ -1,9 +1,8 @@
 package co.com.choucair.certification.starshap.userinterface;
 
-// Serenity
+
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
-// Openqa
 import org.openqa.selenium.By;
 
 public class GoToTheSectionPage extends PageObject {

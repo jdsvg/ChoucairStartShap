@@ -45,6 +45,5 @@ public class CreateMeetingPage extends PageObject {
 
 
     public static final Target SAVE_NEW_MEETING = Target.the("Button that save the new Meeting")
-//            .located(By.xpath("//div[@class='s-DialogToolbar s-Serenity-Toolbar s-Toolbar clearfix']//span"));
             .located(By.className("fa-check-circle"));
 }
