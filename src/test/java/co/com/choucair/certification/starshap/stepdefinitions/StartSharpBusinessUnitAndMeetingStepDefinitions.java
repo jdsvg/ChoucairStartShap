@@ -15,7 +15,6 @@ import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 public class StartSharpBusinessUnitAndMeetingStepDefinitions {
 
-
     @Before
     public void setStage(){
         setTheStage(new OnlineCast());
@@ -23,47 +22,43 @@ public class StartSharpBusinessUnitAndMeetingStepDefinitions {
 
     // BACKGROUND
     @Given("^than James wants to create an Business Units and then create a meeting$")
-    public void thanJamesWantsToCreateAnBusinessUnitsAndThenCreateABussni() throws Exception {
+    public void thanJamesWantsToCreateAnBusinessUnitsAndThenCreateABussni() {
         theActorCalled("James").wasAbleTo(OpenUp.thePage());
     }
     @Given("^he go to login with his credentials$")
-    public void heGoToLoginWithHisCredentials(List<StartSharpData> data) throws Exception {
+    public void heGoToLoginWithHisCredentials(List<StartSharpData> data) {
         theActorInTheSpotlight().attemptsTo(Login.onThePageWith(data));
     }
 
-
-
     // SCENARIO 1
     @Given("^he go to the section (.*)$")
-    public void heGoToTheSectionBusinessUnits(String section) throws Exception {
+    public void heGoToTheSectionBusinessUnits(String section) {
         theActorInTheSpotlight().attemptsTo(GoToTheSection.aboutOf(section));
     }
 
     @When("^he is on the Star Sharp platform he will create a new Unit  filling all fields$")
-    public void heIsOnTheStarSharpPlatformHeWillCreateANewUnitFillingAllFields(List<StartSharpData> data) throws Exception {
+    public void heIsOnTheStarSharpPlatformHeWillCreateANewUnitFillingAllFields(List<StartSharpData> data){
         theActorInTheSpotlight().attemptsTo(CreateBusnissesUnit.withTheFollowingInformation(data));
     }
 
     @Then("^he see the new (.*) on the tree$")
-    public void heSeeTheNewBusinessUnitOnTheTree(String data) throws Exception {
+    public void heSeeTheNewBusinessUnitOnTheTree(String data) {
         theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.AfterSearching(data)));
     }
 
-
     //SCENARIO 2
     @Given("^now he go to the section (.*)")
-    public void nowHeGoToTheSectionMeeting(String section) throws Exception {
+    public void nowHeGoToTheSectionMeeting(String section) {
         theActorInTheSpotlight().attemptsTo(GoToTheSection.aboutOf(section));
     }
 
-
     @When("^he will to create a new Meeting$")
-    public void heWillToCreateANewMeeting(List<StartSharpData> data) throws Exception {
+    public void heWillToCreateANewMeeting(List<StartSharpData> data) {
         theActorInTheSpotlight().attemptsTo(CreateMeeting.withTheFollowingInformation(data));
     }
 
     @Then("^he can see the new (.*) on the tree$")
-    public void heCanSeeTheNewMeetingJohnVOnTheTree(String data) throws Exception {
+    public void heCanSeeTheNewMeetingJohnVOnTheTree(String data) {
         theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.AfterSearching(data)));
     }
 
