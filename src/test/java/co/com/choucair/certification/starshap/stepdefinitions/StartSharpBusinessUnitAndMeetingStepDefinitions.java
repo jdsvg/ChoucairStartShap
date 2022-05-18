@@ -25,6 +25,7 @@ public class StartSharpBusinessUnitAndMeetingStepDefinitions {
     public void thanJamesWantsToCreateAnBusinessUnitsAndThenCreateABussni() {
         theActorCalled("James").wasAbleTo(OpenUp.thePage());
     }
+
     @Given("^he go to login with his credentials$")
     public void heGoToLoginWithHisCredentials(List<StartSharpData> data) {
         theActorInTheSpotlight().attemptsTo(Login.onThePageWith(data));
@@ -32,34 +33,34 @@ public class StartSharpBusinessUnitAndMeetingStepDefinitions {
 
     // SCENARIO 1
     @Given("^he go to the section (.*)$")
-    public void heGoToTheSectionBusinessUnits(String section) {
-        theActorInTheSpotlight().attemptsTo(GoToTheSection.aboutOf(section));
+    public void heGoToTheSectionBusinessUnits(String businessunit) {
+        theActorInTheSpotlight().attemptsTo(GoToTheSection.aboutOf(businessunit));
     }
 
     @When("^he is on the Star Sharp platform he will create a new Unit  filling all fields$")
-    public void heIsOnTheStarSharpPlatformHeWillCreateANewUnitFillingAllFields(List<StartSharpData> data){
-        theActorInTheSpotlight().attemptsTo(CreateBusnissesUnit.withTheFollowingInformation(data));
+    public void heIsOnTheStarSharpPlatformHeWillCreateANewUnitFillingAllFields(List<StartSharpData> businessunit_data){
+        theActorInTheSpotlight().attemptsTo(CreateBusnissesUnit.withTheFollowingInformation(businessunit_data));
     }
 
     @Then("^he see the new (.*) on the tree$")
-    public void heSeeTheNewBusinessUnitOnTheTree(String data) {
-        theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.AfterSearching(data)));
+    public void heSeeTheNewBusinessUnitOnTheTree(String theNew_businessunit_data) {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.AfterSearching(theNew_businessunit_data)));
     }
 
     //SCENARIO 2
     @Given("^now he go to the section (.*)")
-    public void nowHeGoToTheSectionMeeting(String section) {
-        theActorInTheSpotlight().attemptsTo(GoToTheSection.aboutOf(section));
+    public void nowHeGoToTheSectionMeeting(String meetings) {
+        theActorInTheSpotlight().attemptsTo(GoToTheSection.aboutOf(meetings));
     }
 
     @When("^he will to create a new Meeting$")
-    public void heWillToCreateANewMeeting(List<StartSharpData> data) {
-        theActorInTheSpotlight().attemptsTo(CreateMeeting.withTheFollowingInformation(data));
+    public void heWillToCreateANewMeeting(List<StartSharpData> meetings_data) {
+        theActorInTheSpotlight().attemptsTo(CreateMeeting.withTheFollowingInformation(meetings_data));
     }
 
     @Then("^he can see the new (.*) on the tree$")
-    public void heCanSeeTheNewMeetingJohnVOnTheTree(String data) {
-        theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.AfterSearching(data)));
+    public void heCanSeeTheNewMeetingJohnVOnTheTree(String theNew_meetings_data) {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(TheAnswer.AfterSearching(theNew_meetings_data)));
     }
 
 
